@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+
+*{
+    font-family: "Red Hat Text", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 700;
+}
+
+:root{
+    --Grayish-blue: hsl(237, 18%, 59%);
+    --Soft-red: hsl(345, 95%, 68%);
+    --White: hsl(0, 0%, 100%);
+    --Dark-desaturated-blue: hsl(236, 21%, 26%);
+    --Very-dark-blue: hsl(235, 16%, 14%);
+    --Very-dark-mostly-black-blue: hsl(234, 17%, 12%);
+}
+
+body{
+    background-color: var(--Very-dark-blue);
+}
+
+.container{
+    max-width: 1920px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(assets/images/bg-stars.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    gap: 5rem;
+}
+
+.hills{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+h1{
+    color: var(--White);
+}
+
+.icons{
+    z-index: 1;
+    position: relative;
+    top: 6rem;
+}
+
+ul{
+    display: flex;
+    gap: 1.5rem;
+}
+
+a{
+    color: var(--Grayish-blue);
+    transition: all 0.4s;
+}
+
+a:hover{
+    color: var(--Soft-red);
+}
+
+li{
+    list-style: none;
+}
+
+.icon{
+    height: 1.6rem;
+    width: 1.6rem;
+}
+
+/* clock css */
+
+.clockCont{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    /* background-color: aqua; */
+    gap: 1.5rem;
+}
+
+.lineOne{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.lineTwo{
+    display: flex;
+    gap: 1rem;
+}
+
+.lineTwo h6{
+    width: 8.5rem; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--Grayish-blue);
+}
+
+.lineOne span{
+    color: var(--Soft-red);
+    font-size: 4.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+    width: 8.5rem;  
+    box-shadow: 0px 5px var(--Very-dark-mostly-black-blue);
+    border-radius: 5px;  
+}
+
+.lineOne span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%; 
+    width: 100%;
+    background-color: var(--Dark-desaturated-blue);
+    border-radius: 5px;
+    z-index: 1;
+    opacity: 50%;
+}
+
+.lineOne span::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%; 
+    width: 100%;
+    background-color: hsl(236, 21%, 31%);
+    border-radius: 5px;
+    z-index: -1;
+}
+
+/* Responsive */
+
+@media (max-width:615px) {
+    h1{
+        font-size: 1.2rem;
+    }
+
+    .lineOne{
+        justify-content: center;
+    }
+
+    .lineOne span{
+        font-size: 2.5rem;
+        height: 4.5rem;
+        width: 5rem;
+    }
+
+    .lineTwo{
+        justify-content: center;
+    }
+
+    .lineTwo h6{
+        /* font-size: 2.5rem; */
+        height: 4.5rem;
+        width: 5rem;
+    }
+
+    .hills{
+        height: 14rem;
+    }
+    
+}
